@@ -1,0 +1,88 @@
+/* ==========================================
+   Admin Charts
+========================================== */
+
+.charts-section {
+    margin-top: 35px;
+    margin-bottom: 40px;
+}
+
+.chart-card {
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    padding: 25px;
+
+    height: 100%;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+
+    transition: all .3s ease;
+}
+
+.chart-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 20px 40px rgba(15,23,42,.12);
+
+}
+
+.chart-card h4 {
+
+    margin-bottom: 20px;
+
+    color: #0f172a;
+
+    font-weight: 700;
+
+    font-size: 1.15rem;
+
+}
+
+.recharts-wrapper {
+    font-size: 14px;
+}
+
+.recharts-legend-item-text {
+    color: #334155 !important;
+}
+
+@media(max-width:992px){
+
+.chart-card{
+    margin-bottom:20px;
+}
+
+}
+
+@media(max-width:768px){
+
+.chart-card{
+    padding:18px;
+}
+
+.chart-card h4{
+    font-size:1rem;
+}
+
+.recharts-wrapper{
+    font-size:12px;
+}
+
+}
+
+@media(max-width:576px){
+
+.chart-card{
+    padding:15px;
+}
+
+.chart-card h4{
+    text-align:center;
+}
+
+}

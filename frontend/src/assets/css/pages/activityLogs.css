@@ -1,0 +1,564 @@
+/* =====================================================
+   Activity Logs Page
+===================================================== */
+
+.activity-page {
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+/* =====================================================
+   Header
+===================================================== */
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+    padding: 24px 30px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+
+    border: 1px solid #e2e8f0;
+}
+
+.activity-header h2 {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    margin: 0;
+
+    font-size: 1.9rem;
+    font-weight: 700;
+
+    color: #0f172a;
+}
+
+.activity-header h2 svg {
+    color: #2563eb;
+    font-size: 30px;
+}
+
+.activity-header p {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+/* =====================================================
+   Header Actions
+===================================================== */
+
+.activity-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.activity-actions button {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border: none;
+    outline: none;
+
+    padding: 11px 18px;
+
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    transition: all 0.3s ease;
+}
+
+.activity-actions button svg {
+    font-size: 16px;
+}
+
+.excel-btn {
+    background: #16a34a;
+    color: #fff;
+}
+
+.excel-btn:hover {
+    background: #15803d;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(22, 163, 74, 0.25);
+}
+
+.pdf-btn {
+    background: #dc2626;
+    color: #fff;
+}
+
+.pdf-btn:hover {
+    background: #b91c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(220, 38, 38, 0.25);
+}
+
+/* =====================================================
+   Table Card
+===================================================== */
+
+.table-container {
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    border: 1px solid #e2e8f0;
+
+    box-shadow: 0 12px 35px rgba(15, 23, 42, 0.05);
+
+}
+
+/* =====================================================
+   Table
+===================================================== */
+
+.csms-table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}
+
+.csms-table thead {
+
+    background: linear-gradient(135deg,
+            #2563eb,
+            #3b82f6);
+
+}
+
+.csms-table thead th {
+
+    color: #ffffff;
+
+    padding: 16px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+
+    border: none;
+
+}
+
+.csms-table tbody tr {
+
+    transition: all .25s ease;
+
+}
+
+.csms-table tbody tr:nth-child(even) {
+
+    background: #f8fafc;
+
+}
+
+.csms-table tbody tr:hover {
+
+    background: #eff6ff;
+
+    transform: scale(1.002);
+
+}
+
+.csms-table td {
+
+    padding: 16px;
+
+    color: #334155;
+
+    font-size: 14px;
+
+    vertical-align: middle;
+
+    border-bottom: 1px solid #f1f5f9;
+
+}
+
+/* =====================================================
+   Search Box
+===================================================== */
+
+.table-header {
+
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+}
+
+.table-search {
+
+    width: 320px;
+
+    padding: 12px 16px;
+
+    border-radius: 12px;
+
+    border: 1px solid #cbd5e1;
+
+    font-size: 14px;
+
+    transition: all .3s ease;
+
+    outline: none;
+
+}
+
+.table-search:focus {
+
+    border-color: #2563eb;
+
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, .15);
+
+}
+
+/* =====================================================
+   Empty State
+===================================================== */
+
+.empty-state {
+
+    text-align: center;
+
+    padding: 40px;
+
+    color: #94a3b8;
+
+    font-size: 16px;
+
+}
+
+/* =====================================================
+   Pagination
+===================================================== */
+
+.pagination-area {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 22px;
+
+    background: #ffffff;
+
+    border-top: 1px solid #e2e8f0;
+
+}
+
+.pagination-area span {
+
+    color: #475569;
+
+    font-weight: 600;
+
+}
+
+.pagination-area button {
+
+    border: none;
+
+    background: #2563eb;
+
+    color: white;
+
+    padding: 10px 20px;
+
+    border-radius: 10px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: all .3s ease;
+
+}
+
+.pagination-area button:hover:not(:disabled) {
+
+    background: #1d4ed8;
+
+    transform: translateY(-2px);
+
+}
+
+.pagination-area button:disabled {
+
+    background: #cbd5e1;
+
+    cursor: not-allowed;
+
+}
+
+/* =====================================================
+   Role Badges
+===================================================== */
+
+.role-badge {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 110px;
+
+    padding: 6px 14px;
+
+    border-radius: 50px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: .5px;
+
+    color: white;
+
+}
+
+.role-user {
+
+    background: #16a34a;
+
+}
+
+.role-admin {
+
+    background: #2563eb;
+
+}
+
+.role-technician {
+
+    background: #f59e0b;
+
+}
+
+.role-system {
+
+    background: #64748b;
+
+}
+
+/* =====================================================
+   Action Badge
+===================================================== */
+
+.action-badge {
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+
+    color: #2563eb;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+/* =====================================================
+   Responsive
+===================================================== */
+
+@media (max-width: 992px) {
+
+    .activity-header {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 20px;
+
+    }
+
+    .activity-actions {
+
+        width: 100%;
+
+        justify-content: flex-start;
+
+        flex-wrap: wrap;
+
+    }
+
+    .table-header {
+
+        justify-content: center;
+
+    }
+
+    .table-search {
+
+        width: 100%;
+
+    }
+
+}
+
+@media (max-width:768px) {
+
+    .activity-header {
+
+        padding: 20px;
+
+    }
+
+    .activity-header h2 {
+
+        font-size: 1.5rem;
+
+    }
+
+    .csms-table th,
+    .csms-table td {
+
+        padding: 12px;
+
+        font-size: 13px;
+
+    }
+
+    .pagination-area {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .activity-header h2 {
+
+        font-size: 1.3rem;
+
+    }
+
+    .activity-header p {
+
+        font-size: 14px;
+
+    }
+
+    .table-search {
+
+        font-size: 13px;
+
+    }
+
+    .activity-actions {
+
+        width: 100%;
+
+        flex-direction: column;
+
+    }
+
+    .activity-actions button {
+
+        width: 100%;
+
+        justify-content: center;
+
+    }
+
+}
+
+/* =====================================================
+   Animation
+===================================================== */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+/* ===============================
+   Date & Time
+=================================*/
+
+.activity-date {
+
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    line-height: 1.5;
+    min-width: 150px;
+
+}
+
+.activity-day {
+    font-size: 13px;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: .3px;
+}
+
+.activity-full-date {
+    font-size: 14px;
+    font-weight: 500;
+    color: #334155;
+}
+
+.activity-time {
+    font-size: 13px;
+    color: #64748b;
+    font-weight: 500;
+}

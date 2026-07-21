@@ -1,0 +1,65 @@
+/* ===================================
+   Status Badge
+=================================== */
+
+.status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-width: 110px;
+
+  padding: 7px 14px;
+
+  border-radius: 999px;
+
+  font-size: 0.82rem;
+  font-weight: 600;
+
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+
+  transition: all 0.25s ease;
+}
+
+/* Pending */
+
+.status-pending {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+/* Assigned */
+
+.status-assigned {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* In Progress */
+
+.status-progress {
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+/* Completed */
+
+.status-completed {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+/* Cancelled */
+
+.status-cancelled {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+/* Default */
+
+.status-default {
+  background: #e2e8f0;
+  color: #334155;
+}

@@ -1,0 +1,14 @@
+.register-container {
+  background: #f4f6f9;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-card {
+  width: 500px;
+  border-radius: 15px;
+  border: none;
+  padding: 20px;
+}

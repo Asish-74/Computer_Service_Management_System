@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f8fafc;
+}
+
+.navbar {
+  background: #0f172a;
+}
+
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+  color: #38bdf8 !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+.hero {
+  min-height: 90vh;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.hero span {
+  color: #38bdf8;
+}
+
+.hero-icon {
+  font-size: 180px;
+}

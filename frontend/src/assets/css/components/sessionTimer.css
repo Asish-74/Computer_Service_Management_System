@@ -1,0 +1,66 @@
+.session-timer {
+    min-width: 110px;
+    text-align: center;
+    padding: 7px 14px;
+    border-radius: 25px;
+    color: white;
+    font-weight: 600;
+    font-size: 13px;
+    margin-right: 18px;
+    transition: .3s;
+}
+
+.timer-green{
+    background:#16a34a;
+}
+
+.timer-orange{
+    background:#f59e0b;
+}
+
+.timer-red{
+    background:#dc2626;
+    animation:blink 1s infinite;
+}
+
+@keyframes blink{
+
+    0%{
+        opacity:1;
+    }
+
+    50%{
+        opacity:.4;
+    }
+
+    100%{
+        opacity:1;
+    }
+
+}
+.session-timer{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+
+    min-width:125px;
+    height:42px;
+
+    padding:0 16px;
+
+    border-radius:12px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:600;
+
+    margin-right:18px;
+
+    transition:.3s;
+}
+.session-timer svg{
+    font-size:18px;
+}

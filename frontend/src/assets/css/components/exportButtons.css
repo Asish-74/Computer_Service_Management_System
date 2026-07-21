@@ -1,0 +1,66 @@
+.export-buttons {
+
+    display: flex;
+
+    gap: 12px;
+
+    margin-bottom: 20px;
+
+    justify-content: flex-end;
+
+    flex-wrap: wrap;
+
+}
+
+.excel-btn,
+.pdf-btn {
+
+    border: none;
+
+    padding: 10px 18px;
+
+    border-radius: 8px;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.excel-btn {
+
+    background: #16a34a;
+
+}
+
+.excel-btn:hover {
+
+    background: #15803d;
+
+}
+
+.pdf-btn {
+
+    background: #dc2626;
+
+}
+
+.pdf-btn:hover {
+
+    background: #b91c1c;
+
+}
+
+@media(max-width:768px){
+
+.export-buttons{
+
+    justify-content:center;
+
+}
+
+}

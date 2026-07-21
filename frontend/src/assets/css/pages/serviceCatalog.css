@@ -1,0 +1,139 @@
+.service-catalog-container{
+    padding:25px;
+}
+
+.service-form-card,
+.service-table-card{
+    background:#ffffff;
+    border-radius:16px;
+    padding:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.08);
+    border:1px solid #e9ecef;
+}
+
+.service-form-card h3,
+.service-table-card h3{
+    font-size:24px;
+    font-weight:700;
+    color:#1e293b;
+    margin-bottom:25px;
+}
+
+.service-form-card label{
+    font-weight:600;
+    margin-bottom:8px;
+    color:#374151;
+}
+
+.service-form-card .form-control{
+    height:48px;
+    border-radius:10px;
+    border:1px solid #ced4da;
+    transition:.3s;
+}
+
+.service-form-card textarea.form-control{
+    height:auto;
+    resize:none;
+}
+
+.service-form-card .form-control:focus{
+    border-color:#2563eb;
+    box-shadow:0 0 0 .2rem rgba(37,99,235,.15);
+}
+
+.service-form-card .btn{
+    min-width:140px;
+    border-radius:10px;
+    font-weight:600;
+    padding:10px 20px;
+}
+
+.service-table-card{
+    margin-top:30px;
+}
+
+.service-table-card table{
+    margin-bottom:0;
+}
+
+.service-table-card thead{
+    background:#2563eb;
+    color:#fff;
+}
+
+.service-table-card thead th{
+    padding:15px;
+    border:none;
+    text-align:center;
+    vertical-align:middle;
+}
+
+.service-table-card tbody td{
+    vertical-align:middle;
+    text-align:center;
+    padding:15px;
+}
+
+.service-table-card tbody tr{
+    transition:.25s;
+}
+
+.service-table-card tbody tr:hover{
+    background:#f8fbff;
+}
+
+.service-table-card strong{
+    color:#1e293b;
+}
+
+.service-table-card small{
+    color:#6b7280;
+}
+
+.badge{
+    padding:8px 14px;
+    border-radius:30px;
+    font-size:13px;
+    font-weight:600;
+}
+
+.btn-warning{
+    color:#fff;
+}
+
+.btn-warning:hover{
+    color:#fff;
+}
+
+.btn-sm{
+    border-radius:8px;
+    font-weight:600;
+}
+
+.table-responsive{
+    border-radius:12px;
+    overflow:hidden;
+}
+
+@media(max-width:768px){
+
+    .service-catalog-container{
+        padding:15px;
+    }
+
+    .service-form-card,
+    .service-table-card{
+        padding:18px;
+    }
+
+    .service-form-card .btn{
+        width:100%;
+        margin-bottom:10px;
+    }
+
+    .service-table-card table{
+        min-width:700px;
+    }
+
+}

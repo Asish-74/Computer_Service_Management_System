@@ -1,0 +1,147 @@
+/* ==========================================
+   Responsive
+========================================== */
+
+@media (max-width: 992px) {
+
+  .users-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .users-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .users-header p {
+    font-size: 0.95rem;
+  }
+
+  .table-container {
+    overflow-x: auto;
+  }
+
+}
+
+@media (max-width: 768px) {
+
+  .users-header {
+    margin-bottom: 20px;
+  }
+
+  .users-header h2 {
+    font-size: 1.5rem;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .users-header p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .user-name,
+  .user-info {
+    font-size: 0.9rem;
+    gap: 6px;
+  }
+
+  .role-badge {
+    font-size: 0.8rem;
+    padding: 6px 12px;
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .users-page {
+    width: 100%;
+  }
+
+  .users-header {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .users-header h2 {
+    font-size: 1.3rem;
+  }
+
+  .users-header p {
+    font-size: 0.85rem;
+  }
+
+  .table-container {
+    border-radius: 14px;
+  }
+
+  .csms-table th,
+  .csms-table td {
+    font-size: 14px;
+    padding: 12px;
+    white-space: nowrap;
+  }
+
+  .role-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+
+}
+.table-container{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    -webkit-overflow-scrolling:touch;
+
+    scrollbar-width:thin;
+}
+
+.table-responsive{
+    width:100%;
+    overflow-x:auto;
+    overflow-y:hidden;
+
+    -webkit-overflow-scrolling:touch;
+}
+
+.csms-table{
+    min-width:900px;
+}
+@media (max-width:768px){
+
+.table-container{
+    border-radius:16px;
+}
+
+.csms-table{
+    min-width:900px;
+}
+
+}
+.table-container::after{
+    content:"← Swipe horizontally →";
+
+    display:none;
+
+    text-align:center;
+
+    font-size:12px;
+
+    color:#64748b;
+
+    padding:8px 0;
+}
+
+@media (max-width:768px){
+
+.table-container::after{
+    display:block;
+}
+
+}

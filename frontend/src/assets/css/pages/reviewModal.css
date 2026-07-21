@@ -1,0 +1,145 @@
+.review-overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(15,23,42,.55);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.review-modal{
+
+    width:500px;
+
+    max-width:92%;
+
+    background:#fff;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.2);
+
+    animation:popup .3s ease;
+
+}
+
+.review-modal h2{
+
+    margin-bottom:10px;
+
+    color:#0f172a;
+
+}
+
+.review-modal p{
+
+    color:#64748b;
+
+    margin-bottom:25px;
+
+}
+
+.review-modal textarea{
+
+    width:100%;
+
+    margin-top:20px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:10px;
+
+    padding:14px;
+
+    resize:none;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+.review-modal textarea:focus{
+
+    border-color:#2563eb;
+
+}
+
+.review-actions{
+
+    display:flex;
+
+    justify-content:flex-end;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.cancel-btn{
+
+    border:none;
+
+    padding:10px 20px;
+
+    border-radius:8px;
+
+    background:#e2e8f0;
+
+    cursor:pointer;
+
+}
+
+.submit-btn{
+
+    border:none;
+
+    padding:10px 24px;
+
+    border-radius:8px;
+
+    background:#2563eb;
+
+    color:#fff;
+
+    cursor:pointer;
+
+}
+
+.submit-btn:hover{
+
+    background:#1d4ed8;
+
+}
+
+@keyframes popup{
+
+    from{
+
+        opacity:0;
+
+        transform:scale(.9);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}   
