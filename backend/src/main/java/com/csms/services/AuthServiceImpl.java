@@ -16,14 +16,15 @@ import com.csms.entity.Admin;
 import com.csms.entity.OtpVerification;
 import com.csms.entity.Technician;
 import com.csms.entity.User;
+import com.csms.exception.BadRequestException;
+import com.csms.exception.ResourceNotFoundException;
 import com.csms.repository.AdminRepo;
 import com.csms.repository.OtpVerificationRepo;
 import com.csms.repository.TechnicianRepo;
 import com.csms.repository.UserRepo;
 
 import jakarta.transaction.Transactional;
-import com.csms.exception.BadRequestException;
-import com.csms.exception.ResourceNotFoundException;
+
 @Service
 public class AuthServiceImpl implements AuthService {
 
@@ -47,13 +48,13 @@ public class AuthServiceImpl implements AuthService {
 
         String email = dto.getEmail();
 
-        boolean exists =
-                userRepo.findByEmail(email).isPresent()
+        boolean exists
+                = userRepo.findByEmail(email).isPresent()
                 || adminRepo.findByEmail(email).isPresent()
                 || technicianRepo.findByEmail(email).isPresent();
 
         if (!exists) {
-        	throw new ResourceNotFoundException("Email Not Registered");
+            throw new ResourceNotFoundException("Email Not Registered");
         }
 
         otpRepo.deleteByEmail(email);
@@ -71,18 +72,10 @@ public class AuthServiceImpl implements AuthService {
 
         otpRepo.save(verification);
 
-        try {
-
-            emailService.sendEmail(
-                    email,
-                    "CSMS | Password Reset OTP",
-                    EmailTemplates.forgotPasswordOtp(otp));
-
-        } catch (Exception exception) {
-
-            exception.printStackTrace();
-
-        }
+        emailService.sendEmail(
+                email,
+                "CSMS | Password Reset OTP",
+                EmailTemplates.forgotPasswordOtp(otp));
 
     }
 
@@ -90,8 +83,8 @@ public class AuthServiceImpl implements AuthService {
     public boolean verifyOtp(VerifyOtpDto dto) {
 
         OtpVerification otp = otpRepo.findByEmail(dto.getEmail())
-                .orElseThrow(() ->
-                new ResourceNotFoundException("OTP Not Found"));
+                .orElseThrow(()
+                        -> new ResourceNotFoundException("OTP Not Found"));
 
         if (!otp.getOtp().equals(dto.getOtp())) {
             return false;
@@ -114,15 +107,15 @@ public class AuthServiceImpl implements AuthService {
     public void resetPassword(ResetPasswordDto dto) {
 
         OtpVerification otp = otpRepo.findByEmail(dto.getEmail())
-        		.orElseThrow(() ->
-                new ResourceNotFoundException("OTP Not Found"));
+                .orElseThrow(()
+                        -> new ResourceNotFoundException("OTP Not Found"));
 
         if (!otp.isVerified()) {
-        		throw new BadRequestException("Please verify OTP first.");
+            throw new BadRequestException("Please verify OTP first.");
         }
 
-        Optional<User> user =
-                userRepo.findByEmail(dto.getEmail());
+        Optional<User> user
+                = userRepo.findByEmail(dto.getEmail());
 
         user.ifPresent(value -> {
 
@@ -132,8 +125,8 @@ public class AuthServiceImpl implements AuthService {
 
         });
 
-        Optional<Admin> admin =
-                adminRepo.findByEmail(dto.getEmail());
+        Optional<Admin> admin
+                = adminRepo.findByEmail(dto.getEmail());
 
         admin.ifPresent(value -> {
 
@@ -143,8 +136,8 @@ public class AuthServiceImpl implements AuthService {
 
         });
 
-        Optional<Technician> technician =
-                technicianRepo.findByEmail(dto.getEmail());
+        Optional<Technician> technician
+                = technicianRepo.findByEmail(dto.getEmail());
 
         technician.ifPresent(value -> {
 
