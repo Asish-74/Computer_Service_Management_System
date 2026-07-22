@@ -47,7 +47,8 @@ public class SecurityConfig {
 
                         "/api/upload/**",
 
-                        "/profile/**"
+                        "/profile/**",
+                        "/debug/**"
 
                 ).permitAll()
 
