@@ -72,10 +72,18 @@ public class AuthServiceImpl implements AuthService {
 
         otpRepo.save(verification);
 
-        emailService.sendEmail(
-                email,
-                "CSMS | Password Reset OTP",
-                EmailTemplates.forgotPasswordOtp(otp));
+        try {
+
+            emailService.sendEmail(
+                    email,
+                    "CSMS | Password Reset OTP",
+                    EmailTemplates.forgotPasswordOtp(otp));
+
+        } catch (Exception exception) {
+
+            throw new RuntimeException("Email sending failed", exception);
+
+        }
 
     }
 
