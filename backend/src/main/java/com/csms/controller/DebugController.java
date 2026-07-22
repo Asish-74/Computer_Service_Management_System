@@ -10,17 +10,15 @@ import javax.sql.DataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/debug")
 public class DebugController {
 
     @Autowired
     private DataSource dataSource;
 
-    @GetMapping("/db")
+    @GetMapping("/debug/db")
     public Map<String, Object> db() throws Exception {
 
         Map<String, Object> map = new HashMap<>();
@@ -34,20 +32,21 @@ public class DebugController {
 
             ResultSet rs = st.executeQuery(
                     "SELECT current_database(), current_schema()");
-            if (rs.next()) {
-                map.put("database", rs.getString(1));
-                map.put("schema", rs.getString(2));
+            rs.next();
+
+            map.put("database", rs.getString(1));
+            map.put("schema", rs.getString(2));
+
+            rs = st.executeQuery(
+                    "SELECT table_name FROM information_schema.tables WHERE table_schema='public'");
+
+            StringBuilder tables = new StringBuilder();
+
+            while (rs.next()) {
+                tables.append(rs.getString(1)).append(", ");
             }
 
-            rs = st.executeQuery("SELECT COUNT(*) FROM admin");
-            if (rs.next()) {
-                map.put("adminCount", rs.getInt(1));
-            }
-
-            rs = st.executeQuery("SELECT COUNT(*) FROM users");
-            if (rs.next()) {
-                map.put("userCount", rs.getInt(1));
-            }
+            map.put("tables", tables.toString());
         }
 
         return map;
