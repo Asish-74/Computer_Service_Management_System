@@ -247,7 +247,7 @@ Example
 ```properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/csms
 spring.datasource.username=postgres
-spring.datasource.password=your_password
+spring.datasource.password=yourPassword
 
 spring.jpa.hibernate.ddl-auto=update
 ```
