@@ -72,13 +72,11 @@ public class UserController {
     @GetMapping("/requests")
     public ResponseEntity<ResponseStructure<List<ServiceRequestResponseDto>>> getMyRequests() {
 
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String email = authentication.getName();
 
-        ResponseStructure<List<ServiceRequestResponseDto>> response =
-                new ResponseStructure<>();
+        ResponseStructure<List<ServiceRequestResponseDto>> response = new ResponseStructure<>();
 
         response.setStatuscode(HttpStatus.OK.value());
         response.setMsg("Requests Retrieved Successfully");
@@ -91,15 +89,13 @@ public class UserController {
     @GetMapping("/dashboard")
     public ResponseEntity<ResponseStructure<UserDashboardDto>> dashboard() {
 
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String email = authentication.getName();
 
         UserDashboardDto dashboard = service.getDashboard(email);
 
-        ResponseStructure<UserDashboardDto> response =
-                new ResponseStructure<>();
+        ResponseStructure<UserDashboardDto> response = new ResponseStructure<>();
 
         response.setStatuscode(HttpStatus.OK.value());
         response.setMsg("Dashboard Loaded Successfully");
@@ -113,8 +109,7 @@ public class UserController {
     public ResponseEntity<ResponseStructure<User>> updateProfile(
             @Valid @RequestBody UserUpdateDto dto) {
 
-        Authentication authentication =
-                SecurityContextHolder.getContext().getAuthentication();
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
 
         String email = authentication.getName();
 
