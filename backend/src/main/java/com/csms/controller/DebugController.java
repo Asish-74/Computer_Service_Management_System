@@ -37,6 +37,15 @@ public class DebugController {
             map.put("database", rs.getString(1));
             map.put("schema", rs.getString(2));
 
+            ResultSet rs2 = st.executeQuery("SELECT COUNT(*) FROM admin");
+            rs2.next();
+            map.put("adminCount", rs2.getInt(1));
+
+            ResultSet rs3 = st.executeQuery("SELECT COUNT(*) FROM users");
+            rs3.next();
+            map.put("userCount", rs3.getInt(1));
+            
+
             rs = st.executeQuery(
                     "SELECT table_name FROM information_schema.tables WHERE table_schema='public'");
 
